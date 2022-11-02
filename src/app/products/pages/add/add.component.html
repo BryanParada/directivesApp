@@ -1,4 +1,4 @@
-<h1 class="mt-5"> Add Product {{text1}}</h1>
+<h1 class="mt-5"> Add Product  </h1>
 <hr>
 
 
@@ -17,7 +17,7 @@
 
         <div class="col-auto">
             <span errorMsgDrt
-                  [color]="colorIWant"
+                  [color]="color"
                   [msg]="text1"
 
                   *ngIf="hasError('name')">
@@ -40,6 +40,6 @@
     </div>
 </form>
 
-<h3 class="mt-5" errorMsgDrt color="#6857E6"> Form </h3>
+<h3 class="mt-5" errorMsgDrt > Form </h3>
 <pre>Valid: {{myForm.value | json}}</pre>
 <pre>Valid: {{myForm.valid}}</pre>
