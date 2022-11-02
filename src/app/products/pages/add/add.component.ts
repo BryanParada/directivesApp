@@ -24,4 +24,5 @@ export class AddComponent implements OnInit {
     return this.myForm.get(field)?.invalid || false;
   }
 
+
 }
