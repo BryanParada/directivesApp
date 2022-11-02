@@ -10,15 +10,15 @@ private _message: string = 'This field is required!!'
 
 htmlElement: ElementRef<HTMLElement>
 
-@Input() set color( value: string ){ 
-  this.htmlElement.nativeElement.style.color = value;
+@Input() set color( value: string ){  
   this._color = value;
+  this.setColor();
 }
  
 //@Input() msg: string = ' This Field is required'
-@Input() set msg( value: string ){
-  this.htmlElement.nativeElement.innerText = value;
+@Input() set msg( value: string ){ 
   this._message = value;
+  this.setMsg();
 }
 
 
@@ -48,9 +48,8 @@ htmlElement: ElementRef<HTMLElement>
   ngOnInit(): void {
     //console.log(this.color);  //undefined
     //console.log(this.msg); //undefined
-    //this.setColor();
-    //this.setMsg();
-
+    this.setColor();
+    this.setMsg(); 
     this.setStyle();
   }
 
@@ -58,13 +57,13 @@ htmlElement: ElementRef<HTMLElement>
     this.htmlElement.nativeElement.classList.add("form-text");
   }
 
-  // setColor(): void{
-  //   this.htmlElement.nativeElement.style.color = this._color;
-  //   //this.htmlElement.nativeElement.classList.add("form-text");
-  // }
+  setColor(): void{
+    this.htmlElement.nativeElement.style.color = this._color;
+    //this.htmlElement.nativeElement.classList.add("form-text");
+  }
   
-  // setMsg(): void{
-  //   this.htmlElement.nativeElement.innerText = this.msg
-  // }
+  setMsg(): void{
+    this.htmlElement.nativeElement.innerText = this._message
+  }
 
 }
