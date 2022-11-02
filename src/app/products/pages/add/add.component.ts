@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   ]
 })
 export class AddComponent implements OnInit {
-
+  
+  text1: string = 'Bryan Parada'; 
   colorIWant: string ='green'
 
   myForm: FormGroup = this.fb.group({
@@ -17,6 +18,8 @@ export class AddComponent implements OnInit {
 
   constructor( private fb: FormBuilder) { }
 
+
+
   ngOnInit(): void {
   }
 
@@ -24,5 +27,12 @@ export class AddComponent implements OnInit {
     return this.myForm.get(field)?.invalid || false;
   }
 
+  changeName(){
+    this.text1 = "Juan Perez"
+  }
+
+  changeColor(){
+    this.colorIWant = 'blue'
+  }
 
 }

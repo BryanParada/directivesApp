@@ -1,4 +1,4 @@
-<h1 class="mt-5"> Add Product</h1>
+<h1 class="mt-5"> Add Product {{text1}}</h1>
 <hr>
 
 
@@ -18,9 +18,10 @@
         <div class="col-auto">
             <span errorMsgDrt
                   [color]="colorIWant"
-                  msg="You must complete this field (via span)"
+                  [msg]="text1"
+
                   *ngIf="hasError('name')">
-                
+                  <!-- msg="You must complete this field (via span)" -->
             </span>
         </div>
 
@@ -28,8 +29,12 @@
 
     <div class="row mt-3">
         <div class="col">
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" (click)="changeName()">
                 Save
+            </button>
+            &nbsp;
+            <button class="btn btn-primary ml-1" (click)="changeColor()">
+                Change Color
             </button>
         </div>
     </div>
