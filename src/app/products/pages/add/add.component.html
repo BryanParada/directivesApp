@@ -19,7 +19,7 @@
             <span errorMsgDrt
                   [color]="color"
                   [msg]="text1" 
-                  *ngIf="hasError('name')">
+                  [valid]="!hasError('name')">
                   <!-- msg="You must complete this field (via span)" -->
             </span>
         </div>

@@ -10,17 +10,26 @@ private _message: string = 'This field is required!!'
 
 htmlElement: ElementRef<HTMLElement>
 
+//OPCIONAL EN HTML
 @Input() set color( value: string ){  
   this._color = value;
   this.setColor();
 }
- 
+
+ //OPCIONAL EN HTML
 //@Input() msg: string = ' This Field is required'
 @Input() set msg( value: string ){ 
   this._message = value;
   this.setMsg();
 }
 
+@Input() set valid( value: boolean ){ 
+  if (value === true) {
+    this.htmlElement.nativeElement.classList.add('hidden');
+  }else{
+    this.htmlElement.nativeElement.classList.remove('hidden');
+  }
+}
 
   constructor( private elem: ElementRef<HTMLElement>) { 
     this.htmlElement = elem; 
