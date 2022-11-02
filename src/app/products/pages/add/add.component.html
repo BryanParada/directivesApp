@@ -2,7 +2,7 @@
 <hr>
 
 
-<form >
+<form [formGroup]="myForm">
 
     <div class="row g-3 align-items-center">
 
@@ -11,11 +11,13 @@
         </div>
 
         <div class="col-auto">
-            <input class="form-control" > 
+            <input class="form-control" 
+                   formControlName="name"> 
         </div>
 
         <div class="col-auto">
-            <span class="form-text">
+            <span class="form-text" 
+                  *ngIf="hasError('name')">
                 This Field is required
             </span>
         </div>
@@ -32,3 +34,5 @@
 </form>
 
 <h3 class="mt-5"> Form </h3>
+<pre>Valid: {{myForm.value | json}}</pre>
+<pre>Valid: {{myForm.valid}}</pre>
