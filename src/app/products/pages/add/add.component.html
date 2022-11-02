@@ -18,6 +18,7 @@
         <div class="col-auto">
             <span class="form-text" 
                   errorMsgDrt
+                  [color]="colorIWant"
                   *ngIf="hasError('name')">
                 This Field is required
             </span>
@@ -34,6 +35,6 @@
     </div>
 </form>
 
-<h3 class="mt-5"> Form </h3>
+<h3 class="mt-5" errorMsgDrt color="#6857E6"> Form </h3>
 <pre>Valid: {{myForm.value | json}}</pre>
 <pre>Valid: {{myForm.valid}}</pre>
